@@ -1,0 +1,35 @@
+﻿
+@model WebApplication3.Models.CatagoryFirst
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Catagory  Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(m=>m.CId)
+            </dt>
+        <dd>
+            @Html.DisplayFor(a=>a.CId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(a=>a.CatagoryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(a=>a.CatagoryName)
+        </dd>
+
+
+    </dl>
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CId },, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Back To List","Index",, new { @class = "btn btn-info" })
+</p>
+

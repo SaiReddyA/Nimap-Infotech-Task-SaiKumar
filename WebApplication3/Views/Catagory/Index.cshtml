@@ -1,0 +1,42 @@
+﻿
+@using PagedList;
+@using PagedList.Mvc;
+@model  IPagedList<WebApplication3.Models.CatagoryFirst>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Catagory </h2>
+
+<p>
+    @Html.ActionLink("Add Catagory Data", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.First().CId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(a => a.First().CatagoryName)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.CId)</td>
+            <td>@Html.DisplayFor(m => item.CatagoryName)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CId }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CId }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager(Model, i => Url.Action("Index", "Catagory", new { i, search = Request.QueryString[""] }))
+

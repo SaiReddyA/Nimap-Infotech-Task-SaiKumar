@@ -1,0 +1,36 @@
+﻿
+
+@model WebApplication3.Models.CatagoryFirst
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<h3>Are you sure want to delete this?</h3>
+<div>
+    
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(a => a.CatagoryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(a => a.CatagoryName)
+        </dd>
+        
+    </dl>
+
+    @using (Html.BeginForm())
+            {
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Back To List","Index",, new { @class = "btn btn-info" })
+        </div>
+            }
+
+
+
+
+
+
+</div>
